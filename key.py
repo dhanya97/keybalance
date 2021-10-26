@@ -36,7 +36,7 @@ atexit.register(end_log)
 log("Start Program")
 
 
-print(Fore.GREEN + "Start search... Pick Range 128 Above you starting range or it will not work")
+print(Fore.GREEN + "Start search... Pick Range 256 Above you starting range or it will not work")
 x=int(input(Fore.YELLOW +"'start range Min 1-115792089237316195423570985008687907852837564279074904382605163141518161494335 -> "))
 y=int(input("stop range Max 115792089237316195423570985008687907852837564279074904382605163141518161494336 -> "))
 print(Fore.RED + "Starting search... Please Wait ")
@@ -60,13 +60,13 @@ while P<y:
     saddr = key.segwit_address  #Segwit address
     query.append(caddr)
     count+=1
-    total+=128 
+    total+=256 
     seed=str(ran)
-    pagenumber= int(seed)//128
-    if len(query) == 128:
+    pagenumber= int(seed)//256
+    if len(query) == 256:
         
         try:
-            request = requests.get("https://blockchain.info/multiaddr?active=%s" % ','.join(query), timeout=1)
+            request = requests.get("https://blockchain.info/multiaddr?active=%s" % ','.join(query), timeout=2)
             request = request.json()
             print(Fore.BLUE + "\nkeys.py---" + Fore.RED + "Made by mizogg.co.uk Donations 3M6L77jC3jNejsd5ZU1CVpUVngrhanb6cD" + Fore.BLUE + "---keys.py"   + seconds_to_str())
             print(Fore.RED + '\nPrivateKey (hex) Last One in Scan : ' + Fore.YELLOW + key.to_hex() + Fore.RED + ' : PrivateKey (hex) Last One in Scan' + Style.RESET_ALL)
@@ -89,8 +89,7 @@ while P<y:
                     f.write('\nBitcoin Segwit Address :' + saddr)
                     f.write('\nPrivateKey (wif) Compressed : ' + wif2)
                     f.write('\nPrivateKey (wif) UnCompressed : ' + wif)
-                    f.write('\n Check All Addresses within 128 in this range to find wallet')
-                    f.write('\n Made by mizogg.co.uk Donations 3M6L77jC3jNejsd5ZU1CVpUVngrhanb6cD ' )
+                    f.write('\n Check All Addresses within 256 in this range to find wallet')
                     f.close()
                     print('\a')
                     break
@@ -99,4 +98,4 @@ while P<y:
 
         # Reset counter
         query = []
-        sleep(10) # Reduce Sleep to go faster
+        sleep(2) # Reduce Sleep to go faster
