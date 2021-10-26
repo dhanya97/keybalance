@@ -62,8 +62,8 @@ while P<y:
     count+=1
     total+=256 
     seed=str(ran)
-    pagenumber= int(seed)//256
-    if len(query) == 256:
+    pagenumber= int(seed)//128
+    if len(query) == 128:
         
         try:
             request = requests.get("https://blockchain.info/multiaddr?active=%s" % ','.join(query), timeout=2)
@@ -89,7 +89,7 @@ while P<y:
                     f.write('\nBitcoin Segwit Address :' + saddr)
                     f.write('\nPrivateKey (wif) Compressed : ' + wif2)
                     f.write('\nPrivateKey (wif) UnCompressed : ' + wif)
-                    f.write('\n Check All Addresses within 256 in this range to find wallet')
+                    f.write('\n Check All Addresses within 128 in this range to find wallet')
                     f.close()
                     print('\a')
                     break
