@@ -66,7 +66,7 @@ while P<y:
     if len(query) == 128:
         
         try:
-            request = requests.get("https://blockchain.info/multiaddr?active=%s" % ','.join(query), timeout=2)
+            request = requests.get("https://blockchain.info/multiaddr?active=%s" % ','.join(query), timeout=1)
             request = request.json()
             print(Fore.BLUE + "\nkeys.py---" + Fore.RED + "Made by mizogg.co.uk Donations 3M6L77jC3jNejsd5ZU1CVpUVngrhanb6cD" + Fore.BLUE + "---keys.py"   + seconds_to_str())
             print(Fore.RED + '\nPrivateKey (hex) Last One in Scan : ' + Fore.YELLOW + key.to_hex() + Fore.RED + ' : PrivateKey (hex) Last One in Scan' + Style.RESET_ALL)
@@ -98,4 +98,4 @@ while P<y:
 
         # Reset counter
         query = []
-        sleep(2) # Reduce Sleep to go faster
+        sleep(1) # Reduce Sleep to go faster
