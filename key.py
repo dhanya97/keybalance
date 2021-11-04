@@ -78,7 +78,7 @@ while P<y:
             for row in request["addresses"]:
                 print(row)
                 print(Fore.GREEN +  '<--------------------------------Page Number ' , Fore.YELLOW , pagenumber , Fore.GREEN , ' on Keys--------------------------------> '+ Style.RESET_ALL)
-                if row["final_balance"] > 0:
+                if row["total_received"] > 0:
                     print(Fore.GREEN + "\nMatching Key ==== Found!!!\n PrivateKey: " + Fore.YELLOW + key.to_hex() + Style.RESET_ALL)
                     print(Fore.GREEN + "\nMatching Key ==== Found!!!\n Page Number: " + Fore.YELLOW , pagenumber , Style.RESET_ALL)
                     f=open(u"winner.txt","a")
